@@ -58,12 +58,13 @@ class Calculator {
         this.previousOperand = '';
 
     }
+
     getDisplayNumber(number){
         const stringNumber = number.toString();
         const intergerDigits = parseFloat(stringNumber.split('.')[0]);
-        const decimalDigits = stringNumber.split('.')[0];
+        const decimalDigits = stringNumber.split('.')[1];
         let intergerDisplay;
-        if(isNaN(intergerDisplay)){
+        if(isNaN(intergerDigits)){
             intergerDisplay = '';
         }else{
             intergerDisplay = intergerDigits.toLocaleString('en',{maximumFractionDigits:0});
@@ -80,6 +81,8 @@ class Calculator {
         this.currentOperandTextElement.innerText = this.getDisplayNumber(this.currentOperand);
         if(this.opearation != null){
             this.previousOperandTextElement.innerText = `${this.getDisplayNumber(this.previousOperand)} ${this.opearation}`;
+        }else{
+            this.previousOperandTextElement.innerText ='';
         }
 
     }
