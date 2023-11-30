@@ -22,7 +22,7 @@ class Calculator {
     }
     chooseOpearation(opearation) {
         if (this.currentOperand === '') return;
-        if (this.previousOperand != '') {
+        if (this.previousOperand !== '') {
             this.compute();
         }
         this.opearation = opearation;
